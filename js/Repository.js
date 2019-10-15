@@ -2,7 +2,7 @@
 
 // check whether the owner and the repo name is stored in localStorage
 if (localStorage.getItem("owner") === "" || localStorage.getItem("repo") === ""){
-  window.location.href = "MainPage.html";
+  window.location.href = "Index.html";
 }
 
 let fileStackRef = document.getElementsByClassName("file-history-stack")[0]

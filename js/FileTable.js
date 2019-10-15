@@ -4,7 +4,7 @@ owner = localStorage.getItem("owner")
 repo = localStorage.getItem("repo")
 // check whether the owner and the repo name is stored in localStorage
 if (owner === "" || repo === ""){
-  window.location.href = "MainPage.html";
+  window.location.href = "Index.html";
 }
 
 let fileList = []
