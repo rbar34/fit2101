@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>GitHub Inspector | Contributors</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/Contributors.css">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+    </head>
+
+    <body>
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Contributors</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+              <button class="mdl-button mdl-color-text--white" onclick="location.href='Overview.html'">
+                Overview
+              </button>
+              <button class="mdl-button mdl-color-text--white" onclick="location.href='Repository.html'">
+                Repository
+              </button>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-color-text--grey" disabled>
+                Contributors
+              </button>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+          <span class="mdl-layout-title">Contributors</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="Repository.html">Navigator</a>
+            <a class="mdl-navigation__link" href="Overview.html">Overview</a>
+            <a class="mdl-navigation__link" href="Navigator.html">Navigator</a>
+          </nav>
+        </div>
+        <main class="mdl-layout__content">
+          <div class="page-content"><!-- Your content goes here -->
+            <div class="main-grid-mdl mdl-grid">
+              <div class = "mdl-cell mdl-cell-3-col">
+                <dt id="ownerAndRepo"></dt>
+              </div>
+            <!-- Refer to https://www.tutorialspoint.com/materialdesignlite/materialdesignlite_grids.htm -->
+            <!-- Refer to https://getmdl.io/components/#layout-section/grid -->
+                <div class="mdl-spinner mdl-js-spinner is-active" id="spinner"></div>
+                <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col table-col-mdl">
+                  <table class="mdl-data-table files-table mdl-js-data-table mdl-shadow--6dp mdl-cell" id="contributor_table">
+                      <!-- table is built using Contributors.js functions (buildContributorTable())-->
+                  </table>
+                  </div>
+                <div class="mdl-grid">
+            </div>
+          </div>
+        </main>
+      </div>
+
+    </body>
+
+    <script src="js/Contributors.js"></script>
+    <script>
+        buildContributorTable(); // from js/Contributors.js
+    </script>
+
+  </html>

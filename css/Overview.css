@@ -1,0 +1,61 @@
+@media screen and (max-width: 840px) {
+  .file-table {
+      width: 100% !important;
+  }
+  .contributor-table {
+      width: 100% !important;
+  }
+}
+
+.file-table {
+    width: 80%;
+    table-layout: fixed;
+}
+
+.file-table .file-name {
+    width: 100px;
+}
+
+.file-table .file-path {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.file-table .file-size {
+  width: 100px;
+}
+
+.contributor-table {
+    width: 80%;
+    table-layout: fixed;
+}
+
+.contributor-avatar {
+    width: 20%;
+}
+
+.contributor-commits {
+  width: 100px;
+}
+
+td {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  text-align: left !important;
+}
+
+h5 {
+  display: inline-block;
+}
+
+#ownerAndRepo {
+  display: block;
+  font-size: 24px;
+  padding: 22px;
+  padding-bottom: 10px;
+}
+
+.data-table {
+  padding-left: 22px;
+}

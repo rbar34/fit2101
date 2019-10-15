@@ -1,0 +1,39 @@
+#file_table{
+    width:50%;
+    display: none;
+}
+
+.mdl-data-table th{
+  text-align: left !important;
+}
+
+#spinner{
+    margin:auto;
+    /* need to make centred */
+}
+
+#ownerAndRepo{
+  display: block;
+  font-size: 24px;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+#pathTitle {
+  color: #262626ad !important;
+  font-size: 20px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.graph {
+  height: 60vh;
+}
+
+.page-content {
+  height:calc(100% - 82px);
+}
+
+#main-grid {
+  height:calc(100%);
+}

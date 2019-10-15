@@ -1,0 +1,53 @@
+.profile-card-image.mdl-card {
+  width: calc(100% - 16px);
+  padding-top: calc(100% - 16px);
+  min-height: calc(0%);
+  background-size: contain !important;
+}
+
+.profile-card-image > .mdl-card__actions {
+    height: 52px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+table {
+  table-layout: fixed;
+  width: calc(100% - 16px) !important;
+}
+
+.image_file_name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.main-grid-mdl.mdl-grid {
+  padding:20px;
+}
+
+.mdl-components-dt.contributor-title {
+  padding-top:10px;
+  padding-bottom:10px;
+  line-height: 30px;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.mdl_components-dd.contributor-description {
+  font-size: 16px;
+}
+
+td{
+  word-wrap:break-word;
+  word-break:break-all;
+  white-space: normal;
+}
+
+dd{
+  margin-inline-start:0;
+}
+
+.mdl-textfield.mdl-js-textfield {
+  margin-left: 8px;
+}

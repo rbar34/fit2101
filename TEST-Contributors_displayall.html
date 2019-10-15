@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Contributors Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/Contributors.css">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+    </head>
+    <body>
+        <div class="mdl-grid" id="titleGrid">
+              <dt id="ownerAndRepo"></dt>
+        <div class="mdl-spinner mdl-js-spinner is-active" id="spinner"></div>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="contributor_table">
+                <!-- table is built by Contributors.js -->
+        </table>
+    </body>
+    <script src="js/Contributors.js"></script>
+    <script>
+        "use strict";
+
+          // fetch contributors first, using stored owner/repo from main page, then build table
+        fetchContributors(localStorage.getItem("owner"), localStorage.getItem("repo")).then(function(fetchedList){
+            // assign to global variable, for page building
+            contributorList = fetchedList;
+            // show 1st page
+            let page = 1;
+
+            // list was fetched, can build table
+            let tableNode = document.getElementById("contributor_table");
+
+            // delete spinner, display first page
+            spinner.parentNode.removeChild(spinner);
+            tableNode.style.display = "table";
+            tableNode.appendChild(buildTableHead());
+            tableNode.appendChild(buildTableBody(page, fetchedList.length));
+            //tableNode.appendChild(buildPaginationBar(page));
+
+        }, function(contributorsList){
+            // list was not fetched, display error
+            spinner.parentNode.removeChild(spinner);
+            tableNode.innerHTML = "Data could not be retrieved"
+                                                           });
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Contributors Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/Contributors.css">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+    </head>
+    <body>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="contributor_table">
+                <!-- table is built by Contributors.js -->
+        </table>
+    </body>
+    <script src="js/Contributors.js"></script>
+    <script>
+        "use strict";
+
+        let tableNode = document.getElementById("contributor_table");
+
+        fetchContributors(localStorage.getItem("owner"), localStorage.getItem("repo")).then(function(fetchedList) {
+            contributorList = fetchedList;
+            tableNode.style.display = "table";
+            tableNode.appendChild(buildTableHead())
+
+            // page tests
+            let tablePageTest = [[1, 1], [1, 15], [1, 16], [2,15], [999, 15], [Math.ceil(fetchedList.length/15), 15], [Math.ceil(fetchedList.length/15)+1, 15]]
+            for (let index = 0; index < tablePageTest.length; index++){
+                let tableBreak = document.createElement("tr");
+                tableBreak.innerHTML = "page no.:" + tablePageTest[index][0].toString() + " no. contributors:" + tablePageTest[index][1].toString();
+                tableNode.appendChild(tableBreak);
+
+                tableNode.appendChild(buildTableBody(tablePageTest[index][0], tablePageTest[index][1]))
+            }
+
+            // pagination bar appearence tests
+            let pageBarTest = [1,3,2, Math.ceil(fetchedList.length/15), Math.ceil(fetchedList.length/15)-1, Math.ceil(fetchedList.length/15)+1];
+            for (let index = 0; index < pageBarTest.length; index++){
+                tableNode.appendChild(buildPaginationBar(pageBarTest[index]));
+            }
+
+        },function(list){})
+    </script>
+</html>

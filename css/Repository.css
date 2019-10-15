@@ -1,0 +1,67 @@
+.mdl-data-table {
+  width: calc(100% - 45px);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+
+.mdl-data-table .icon-col {
+  width: 10%;
+}
+
+.mdl-data-table .undo-col {
+  width: 10%;
+}
+
+.mdl-data-table .author-col {
+  word-break: break-all;
+  white-space: normal;
+}
+.fileHeader {
+    font-weight: bold;
+}
+
+.fileIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.material-icons.transparent-file-button {
+    opacity: 0.65;
+}
+
+.data {
+  visibility: hidden;
+}
+
+.mdl-data-table .undo-button {
+  float: right;
+  position: relative;
+  height: 30px;
+  min-width: 30px;
+  width: 30px;
+}
+
+.mdl-cell.mdl-cell--12-col.data {
+  margin: 0px;
+}
+
+#ownerAndRepo {
+  display: block;
+  font-size: 24px;
+  padding: 22px;
+  padding-bottom: 10px;
+}
+
+.file-history {
+  color: #262626ad !important;
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+.file-history-selected {
+  color: rgb(255,64,129);
+  font-weight: bold;
+}

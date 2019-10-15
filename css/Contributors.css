@@ -1,0 +1,41 @@
+table {
+  width: calc(100% - 16px) !important;
+  table-layout: fixed;
+}
+
+td {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+#spinner{
+  margin:auto;
+  /* need to make centred */
+}
+
+@media screen and (max-width: 390px) {
+  td {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  th {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+}
+
+.mdl-data-table th{
+  text-align: left !important;
+}
+
+.page-button {
+    min-width: 14%;
+}
+
+#ownerAndRepo {
+  display: block;
+  font-size: 24px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
